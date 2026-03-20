@@ -13,8 +13,12 @@ public class Calculator {
     return a * b;
   }
   public int dividir(int a, int b){
-   return a / b;
+   if (b == 0) {
+    throw new IllegalArgumentException("ERRO!");
+   } else {
+    return a / b;
    }
+  }
   }
 
 
