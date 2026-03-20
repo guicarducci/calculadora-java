@@ -13,7 +13,7 @@ public class Program {
     int opcao = -1;
 
     while (opcao != 0) {
-      System.out.println("Calculadora!");
+      System.out.println("\nCalculadora!");
       System.out.println("Escolha a operacao desejada:");
       System.out.println("1 - Soma");
       System.out.println("2 - Subtracao");
@@ -32,34 +32,28 @@ public class Program {
        } 
     
          System.out.println("Digite dois numeros: ");
-         int a = sc.nextInt();
-         int b = sc.nextInt();
+         double a = sc.nextDouble();
+         double b = sc.nextDouble();
+
+         double resultado = 0;
+         try {
          switch (opcao) {
-          case 1:
-          opcao = 1;
-         System.out.println("Resultado: ");
-         System.out.println(calc.somar(a, b));
-         break;
-          
-         case 2:
-          opcao = 2;
-         System.out.println("Resultado: ");
-         System.out.println(calc.subtrair(a, b));
-         break;
-       
-         case 3:
-          opcao = 3;
-         System.out.println("Resultado: ");
-         System.out.println(calc.multiplicar(a, b)); 
-         break;
-       
-         case 4:
-          opcao = 4;
-         System.out.println("Resultado: ");
-         System.out.println(calc.dividir(a, b));
-         break;
+          case 1: resultado = calc.somar(a, b);
+          break;
+          case 2: resultado = calc.subtrair(a, b);
+          break;
+          case 3: resultado = calc.multiplicar(a, b);
+          break;
+          case 4: resultado = calc.dividir(a, b);
+          break;
        }
-      
+        System.out.println("Resultado: " + resultado);
+      } 
+      catch(IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+      }
+     
+         
        }
     sc.close();
   }

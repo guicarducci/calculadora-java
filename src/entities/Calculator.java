@@ -3,18 +3,18 @@ package entities;
 public class Calculator {
 
 
-  public int somar(int a, int b){
+  public double somar(double a, double b){
    return a + b;
   }
-  public int subtrair(int a, int b) {
+  public double subtrair(double a, double b) {
     return a - b;
   }
-  public int multiplicar(int a, int b) {
+  public double multiplicar(double a, double b) {
     return a * b;
   }
-  public int dividir(int a, int b){
+  public double dividir(double a, double b){
    if (b == 0) {
-    throw new IllegalArgumentException("ERRO!");
+    throw new IllegalArgumentException("ERRO! Divisao por 0 invalida!");
    } else {
     return a / b;
    }
