@@ -13,7 +13,7 @@ public class Program {
     int opcao = -1;
 
     while (opcao != 0) {
-        System.out.println("Calculadora!");
+      System.out.println("Calculadora!");
       System.out.println("Escolha a operacao desejada:");
       System.out.println("1 - Soma");
       System.out.println("2 - Subtracao");
@@ -26,29 +26,38 @@ public class Program {
         System.out.println("Encerrando..");
         break;
        } 
-      else if (opcao > 4 || opcao < 0) {
+       else if (opcao > 4 || opcao < 0) {
         System.out.println("OPCAO INVALIDA! ");
         continue;
-      } 
+       } 
     
          System.out.println("Digite dois numeros: ");
-       int a = sc.nextInt();
-       int b = sc.nextInt();
-         if (opcao == 1) {
-        System.out.println("Resultado: ");
+         int a = sc.nextInt();
+         int b = sc.nextInt();
+         switch (opcao) {
+          case 1:
+          opcao = 1;
+         System.out.println("Resultado: ");
          System.out.println(calc.somar(a, b));
-      }
-       else if (opcao == 2) {
-        System.out.println("Resultado: ");
-        System.out.println(calc.subtrair(a, b));
-       }
-       else if (opcao == 3) {
-        System.out.println("Resultado: ");
-        System.out.println(calc.multiplicar(a, b)); 
-       }
-       else if (opcao == 4) {
-        System.out.println("Resultado: ");
-        System.out.println(calc.dividir(a, b));
+         break;
+          
+         case 2:
+          opcao = 2;
+         System.out.println("Resultado: ");
+         System.out.println(calc.subtrair(a, b));
+         break;
+       
+         case 3:
+          opcao = 3;
+         System.out.println("Resultado: ");
+         System.out.println(calc.multiplicar(a, b)); 
+         break;
+       
+         case 4:
+          opcao = 4;
+         System.out.println("Resultado: ");
+         System.out.println(calc.dividir(a, b));
+         break;
        }
       
        }
